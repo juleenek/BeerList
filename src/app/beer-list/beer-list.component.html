@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="list-container">
+    <div class="beer-list">
+      <div
+        class="beer-element"
+        *ngFor="let beer of beerList"
+        (click)="onBeerSelect(beer)"
+      >
+        <p>{{ beer.name }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="details-container">
+    <app-beer-details
+      *ngIf="selectedBeer"
+      [beer]="selectedBeer"
+    ></app-beer-details>
+  </div>
+</div>
